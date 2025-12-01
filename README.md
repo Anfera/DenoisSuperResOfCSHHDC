@@ -1,6 +1,14 @@
-## Diffusion-Based Denoising and Super-Resolution
+## Diffusion-Based Joint Recovery, Denoising, and Super-Resolution of Compressed-Sensing Satellite LiDAR Data
 
 Final code for the paper pipeline that reconstructs canopy volumes using a diffusion model with a Poisson forward imaging model. The entrypoint is `SingleLikelihood.py`.
+
+### Paper details
+
+- Title: "Diffusion-Based Joint Recovery, Denoising, and Super-Resolution of Compressed-Sensing Satellite LiDAR Data"
+- Authors: Andres Ramirez-Jaime (Graduate Student Member, IEEE), Nestor Porras-Diaz (Graduate Student Member, IEEE), Mark Stephen, Guangning Yang, and Gonzalo R. Arce (Life Fellow, IEEE)
+- Affiliations: University of Delaware, Dept. of Electrical and Computer Engineering (aramjai@udel.edu; nestorfe@udel.edu; arce@udel.edu) and NASA Goddard Space Flight Center (mark.a.stephen@nasa.gov; guangning.yang-1@nasa.gov)
+- Funding: U.S. National Science Foundation Grant No. 2404740 and NASA Grant No. 80NSSC25K7395
+- Links: dataset https://huggingface.co/datasets/anfera236/HHDC
 
 ### Quickstart
 
