@@ -1,0 +1,11 @@
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.23
+tqdm>=4.64
+Pillow>=9.0
+matplotlib>=3.6
+scikit-image>=0.20
+lpips>=0.1.4
+einops>=0.6
+ema-pytorch>=0.2.1
+accelerate>=0.21

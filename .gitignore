@@ -1,0 +1,8 @@
+/TestCube
+/resultCubes/
+/intermediateCubesTest/
+/results/
+__pycache__/
+*.pt
+*.npz
+.DS_Store
