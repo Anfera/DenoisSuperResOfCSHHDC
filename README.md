@@ -1,5 +1,7 @@
 ## Diffusion-Based Joint Recovery, Denoising, and Super-Resolution of Compressed-Sensing Satellite LiDAR Data
 
+![Low- vs high-resolution reconstructions](images/LowVSHigh.png)
+
 Final code for the paper pipeline that reconstructs canopy volumes using a diffusion model with a Poisson forward imaging model. The entrypoint is `SingleLikelihood.py`.
 
 ### Paper details
