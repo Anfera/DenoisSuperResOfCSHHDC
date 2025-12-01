@@ -5,7 +5,7 @@ Final code for the paper pipeline that reconstructs canopy volumes using a diffu
 ### Quickstart
 
 1. Python 3.10+ recommended. Install deps: `pip install -r requirements.txt`.
-2. Place inputs in `TestCube/` (`entrada{RESOLUTION}.npy` and `gt{RESOLUTION}.npy` or the provided `gt2.npy`) and keep `Mblue.tiff` in the project root for the blue-noise mask.
+2. Place inputs in `TestCube/` (`input{RESOLUTION}.npy` and `gt{RESOLUTION}.npy` or the provided `gt2.npy`) and keep `Mblue.tiff` in the project root for the blue-noise mask.
 3. Add the pretrained checkpoint at `results/model{RESOLUTION}.pt` (resolution defaults to 2; adjust in `config.py`).
 4. Run inference: `python SingleLikelihood.py`. Outputs land in `resultCubes/` (final artifacts) and `intermediateCubesTest/` (DDIM snapshots).
 

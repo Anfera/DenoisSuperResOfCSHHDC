@@ -27,7 +27,7 @@ def load_test_data(
     Returns:
         Tuple of (input_data, ground_truth) tensors on the requested device.
     """
-    entrada_path = os.path.join(data_dir, f"entrada{resolution}.npy")
+    input_path = os.path.join(data_dir, f"input{resolution}.npy")
     gt_filename = ground_truth_file or f"gt{resolution}.npy"
     gt_path = os.path.join(data_dir, gt_filename)
 
@@ -35,7 +35,7 @@ def load_test_data(
     if not os.path.exists(gt_path):
         gt_path = os.path.join(data_dir, "gt2.npy")
 
-    input_data = torch.from_numpy(np.load(entrada_path)).float().to(device)
+    input_data = torch.from_numpy(np.load(input_path)).float().to(device)
     ground_truth = torch.from_numpy(np.swapaxes(np.load(gt_path), -1, -2)).float().to(device)
 
     input_data = input_data[:, :32 * factor, :16 * factor]
