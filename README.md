@@ -1,6 +1,6 @@
 ## Diffusion-Based Joint Recovery, Denoising, and Super-Resolution of Compressed-Sensing Satellite LiDAR Data
 
-![Low- vs high-resolution reconstructions](images/LowVSHigh.png)
+![Low- vs high-resolution reconstructions](assets/images/LowVSHigh.png)
 
 Final code for the paper pipeline that reconstructs canopy volumes using a diffusion model with a Poisson forward imaging model. The entrypoint is `SingleLikelihood.py`.
 
@@ -15,23 +15,21 @@ Final code for the paper pipeline that reconstructs canopy volumes using a diffu
 ### Quickstart
 
 1. Python 3.10+ recommended. Install deps: `pip install -r requirements.txt`.
-2. Place inputs in `TestCube/` (`input{RESOLUTION}.npy` and `gt{RESOLUTION}.npy` or the provided `gt2.npy`) and keep `Mblue.tiff` in the project root for the blue-noise mask.
-3. Add the pretrained checkpoint at `results/model{RESOLUTION}.pt` (resolution defaults to 2; adjust in `config.py`).
+2. Place inputs in `data/TestCube/` (`input{RESOLUTION}.npy` and `gt{RESOLUTION}.npy` or the provided `gt2.npy`). The default blue-noise mask now lives at `assets/Mblue.tiff`.
+3. Add the pretrained checkpoint at `results/model{RESOLUTION}.pt` (resolution defaults to 2; adjust in `src/config.py`).
 4. Run inference: `python SingleLikelihood.py`. Outputs land in `resultCubes/` (final artifacts) and `intermediateCubesTest/` (DDIM snapshots).
 
 ### Configuration
 
-All tunable knobs live in `config.py` (resolution, sampling steps, mask type and ratio, SNR, thresholds, and output locations). Update `CHECKPOINT_TEMPLATE`/`CHECKPOINT_DIR` if your weights live elsewhere.
+All tunable knobs live in `src/config.py` (resolution, sampling steps, mask type and ratio, SNR, thresholds, and output locations). Update `CHECKPOINT_TEMPLATE`/`CHECKPOINT_DIR` if your weights live elsewhere.
 
 ### Repository Layout
 
 - `SingleLikelihood.py` — main inference script wired to the diffusion model and Poisson forward operator.
-- `config.py` — runtime constants, RNG seeding, and checkpoint path helper.
-- `data_utils.py` — loading and normalization for the provided cubes.
-- `mask_utils.py` — blue-noise / Bayer / random mask creation.
-- `visualization.py` — CHM/DTM/profile plots plus SSIM/PSNR/LPIPS/MSE/MAE metrics.
-- `forwardImagingPoisson.py` — forward model for Poisson-distributed acquisitions.
-- `denoising_diffusion_pytorch/` — trimmed diffusion implementation (only the pieces needed for this pipeline).
+- `src/` — supporting modules (`config.py`, `data_utils.py`, `mask_utils.py`, `visualization.py`, `forwardImagingPoisson.py`, `canopyPlots.py`) plus the trimmed `denoising_diffusion_pytorch/` package.
+- `data/TestCube/` — expected location for the provided input/ground-truth `.npy` cubes.
+- `assets/Mblue.tiff` — default blue-noise sampling mask used for inference.
+- `assets/images/` — figures referenced by the README.
 
 ### Notes
 
