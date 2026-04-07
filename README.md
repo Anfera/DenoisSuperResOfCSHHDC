@@ -21,12 +21,12 @@ Final code for the paper pipeline that reconstructs canopy volumes using a diffu
 
 ### Configuration
 
-All tunable knobs live in `src/config.py` (resolution, sampling steps, mask type and ratio, SNR, thresholds, and output locations). Update `CHECKPOINT_TEMPLATE`/`CHECKPOINT_DIR` if your weights live elsewhere.
+All tunable knobs live in `src/config.py` (resolution, sampling steps, mask type and ratio, physics model parameters, thresholds, and output locations). Update `CHECKPOINT_TEMPLATE`/`CHECKPOINT_DIR` if your weights live elsewhere.
 
 ### Repository Layout
 
 - `SingleLikelihood.py` — main inference script wired to the diffusion model and Poisson forward operator.
-- `src/` — supporting modules (`config.py`, `data_utils.py`, `mask_utils.py`, `visualization.py`, `forwardImagingPoisson.py`, `canopyPlots.py`) plus the trimmed `denoising_diffusion_pytorch/` package.
+- `src/` — supporting modules (`config.py`, `data_utils.py`, `forward_model.py`, `mask_utils.py`, `visualization.py`, `canopyPlots.py`) plus the trimmed `denoising_diffusion_pytorch/` package.
 - `data/TestCube/` — expected location for the provided input/ground-truth `.npy` cubes.
 - `assets/Mblue.tiff` — default blue-noise sampling mask used for inference.
 - `assets/images/` — figures referenced by the README.
