@@ -115,7 +115,7 @@ def main():
     # ------------------------------------------------------------------
     # Data
     # ------------------------------------------------------------------
-    _, ground_truth = load_test_data(resolution=RESOLUTION, factor=FACTOR, device=DEVICE)
+    ground_truth = load_test_data(resolution=RESOLUTION, factor=FACTOR, device=DEVICE)
 
     with torch.no_grad():
         y, _ = forward_imaging(ground_truth.float())
