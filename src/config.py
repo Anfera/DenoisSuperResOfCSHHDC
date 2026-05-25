@@ -41,7 +41,7 @@ SAMPLING_TIMESTEPS = 250
 # ---------------------------------------------------------------------------
 # DPS optimisation
 # ---------------------------------------------------------------------------
-LR_MULTIPLIER = 50000            # Gradient descent step scale (tuned for physics model)
+LR_MULTIPLIER = 4000            # Gradient descent step scale (tuned for physics model)
 EPSILON = 1e-6
 RECON_THRESHOLD = 0.05
 

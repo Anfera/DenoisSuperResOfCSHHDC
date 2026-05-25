@@ -181,7 +181,7 @@ def main():
         res = y - lambda_val
         nll_per_voxel = 0.5 * ((res**2) / var + torch.log(var))
         # mask (out_h, out_w) broadcasts over (num_bins, out_h, out_w)
-        nll = (mask * nll_per_voxel).sum()
+        nll = (mask * nll_per_voxel).mean()
 
         grads = torch.autograd.grad(nll, output, create_graph=False)[0]
 
